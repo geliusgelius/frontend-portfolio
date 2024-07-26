@@ -1,0 +1,674 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* Цвета для светлой темы */
+    --main-color: #d8b4a6; /* Бежево-кремовый */
+    --secondary-color: #000; /* Черный текст */
+    --background-color: #fff; /* Белый фон */
+    --text-color: #000; /* Черный текст */
+    --link-hover-color: #d8b4a6; /* Бежево-кремовый при наведении */
+    --button-background: #d8b4a6; /* Бежево-кремовый для кнопок */
+    --button-hover-background: #bfae9e; /* Более темный бежевый для кнопок при наведении */
+    --font-family-heading: 'Montserrat', sans-serif; /* Изменение на Montserrat */
+    --font-family-body: 'Montserrat', sans-serif; /* Изменение на Montserrat */
+    --font-size-body: 1rem;
+    --font-size-heading: 1.5rem;
+}
+
+/* Цвета для темной темы */
+body.dark-theme {
+    --background-color: #000000; /* Черный фон */
+    --text-color: #ffffff; /* Белый текст */
+    --link-hover-color: #888; /* Серый при наведении */
+    --button-background: #444; /* Темно-серый для кнопок */
+    --button-hover-background: #666; /* Более светлый серый для кнопок при наведении */
+    --secondary-color: #fff; /* Белый текст */
+    --project-text-color: #ffffff; /* Светло-серый текст для проектов */
+    --header-background-color: #444; /* Темно-серый фон для шапки */
+}
+
+/* Применение шрифта ко всем элементам */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Изменение на Montserrat */
+    line-height: 1.45;
+}
+
+body {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+    transition: background-color 0.15s, color 0.3s;
+    max-width: 1200px; /* Устанавливаем максимальную ширину для body */
+    margin: 0 auto; /* Центрируем тело документа */
+}
+
+/* Убедитесь, что секция .about не имеет горизонтального скролла */
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    overflow: hidden; /* Убирает возможный горизонтальный скролл */
+    box-sizing: border-box; /* Учитывает отступы и границы в размере элемента */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    box-sizing: border-box; /* Учитывает отступы и границы в размере контейнера */   
+    background-color: rgba(216, 180, 166, 0.4);
+    backdrop-filter: blur(3px);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+
+.header {
+    background: var(--background-color);
+    padding: 20px;
+    border-bottom: 1px solid #e6e6e6;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between; /* Расположить элементы по краям */
+    align-items: center;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: flex-start; /* Прижать меню к левому краю */
+    flex: 1; /* Позволяет меню занимать доступное пространство */
+}
+
+.header__nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header__nav-item {}
+
+.header__nav-link {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: var(--font-size-heading);
+    transition: color 0.15s, transform 0.3s;
+    font-family: var(--font-family-heading);
+    font-weight: bold;
+}
+
+.header__nav-link:hover {
+    color: var(--link-hover-color);
+    transform: scale(1.05);
+}
+
+.header__buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto; /* Сдвигает кнопки вправо */
+}
+
+
+.header__button {
+    background: var(--button-background);
+    color: var(--secondary-color);
+    font-weight: 900;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-family: var(--font-family-heading);
+}
+
+
+.header__button:hover {
+    background: var(--button-hover-background);
+    color: var(--background-color);
+}
+
+/* Обертывающий контейнер для горизонтального размещения секций */
+.container-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    gap: 20px; /* Расстояние между секциями, при необходимости отрегулируйте */
+    padding: 25px; /* Отступы по краям контейнера */
+    overflow-x: auto; /* Прокрутка в случае, если содержимое не помещается */
+    
+}
+
+/* Убедитесь, что секции имеют адекватные размеры */
+.hero, .about {
+    flex: 1; /* Устанавливает одинаковую ширину для обеих секций, можно настроить по желанию */
+    min-width: 300px; /* Минимальная ширина секции, чтобы контент не был слишком сжат */
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero__avatar {
+    width: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.hero__title {
+    font-size: var(--font-size-heading);
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 20px 0;
+    font-family: var(--font-family-heading);
+    font-weight: 900;
+    
+}
+
+.hero__wave {}
+
+.hero__description {
+    font-size: var(--font-size-heading);
+    color: var(--secondary-color);
+    text-align: center;
+    font-family: var(--font-family-heading);
+    font-weight: 900;
+    overflow: hidden; /* Убирает текст, который выходит за пределы контейнера */
+    border-right: 3px solid var(--text-color); /* Курсор */
+    display: inline-block;
+    animation: blink-caret .75s step-end infinite;
+    max-width: 100%; /* Устанавливаем максимальную ширину для текста */
+    white-space: normal; /* Позволяет переносу текста */
+    display: flex;
+    flex-direction: column;
+}
+
+.typewriter-line {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--text-color); }
+}
+ 
+/* Устранение эффекта при переходе в тёмную тему */
+body.dark-theme .hero__description {
+    border-color: rgb(0, 0, 0);
+}
+
+
+.hero__social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.hero__social-link img {
+    width: 32px;
+    height: 32px;
+}
+
+.hero__social-link:hover img {
+    transform: scale(1.1);
+}
+
+.hero__resume-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--button-background);
+    color: var(--secondary-color);
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-radius: 5px;
+    font-family: var(--font-family-heading);
+}
+
+.hero__resume-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.hero__resume-button:hover {
+    transform: scale(1.1);
+    background-color: var(--button-hover-background);
+    color: #fff;
+    cursor: pointer;
+}
+
+.projects {
+    padding: 20px 20px ;
+    text-align: center;
+}
+
+.projects__title {
+    font-size: var(--font-size-heading);
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+    font-family: var(--font-family-heading);
+    font-weight: bold;
+}
+
+.projects__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    text-align: left;
+    background: var(--button-background);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.15s, background-color 0.15s, color 0.15s;
+    color: var(--text-color); /* Цвет текста по умолчанию */
+    position: relative;
+}
+
+.project:hover {
+    transform: scale(1.1);
+    background-color: var(--button-hover-background);
+    color: var(--secondary-color); /* Цвет текста при наведении */
+    margin: 10px;
+}
+
+/* Стили для ссылок в блоке проектов */
+.project__link {
+    display: inline-block;
+    background: var(--button-hover-background); /* Фон по умолчанию */
+    padding: 10px 15px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: transform 0.15s, background-color 0.15s, color 0.15s;
+    font-family: var(--font-family-body);
+}
+
+.project__overlay {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: #d8b4a6dd;
+    padding: 20px 30px;
+}
+
+/* Стили для ссылок при наведении на родительский блок .project */
+.project:hover .project__link {
+    background-color: var(--button-background);
+    color: var(--text-color);
+}
+
+/* Стили для ссылок при наведении на сами ссылки */
+.project__link:hover {
+    transform: scale(1.1);
+    background-color: var(--button-hover-background);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+
+.project__title,
+.project__description {
+    color: inherit; /* добавлено для изменения цвета текста при наведении */
+}
+
+
+.project__image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Новые стили для изменения цвета ссылок на белый при наведении */
+.project:hover .project__link {
+    color: #fff;
+}
+
+/* Стили для темной темы */
+body.dark-theme .header {
+    background: var();
+    border-bottom: 1px solid var(--header-background-color);
+}
+
+body.dark-theme .header__nav-link {
+    color: var(--secondary-color);
+}
+
+body.dark-theme .header__nav-link:hover {
+    color: #888;
+}
+
+body.dark-theme .header__button {
+    background: var(--button-background);
+    color: var(--text-color);
+}
+
+body.dark-theme .header__button:hover {
+    background: var(--button-hover-background);
+}
+
+body.dark-theme .project {
+    background: #444;
+    color: var(--project-text-color);
+}
+
+body.dark-theme .project:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+body.dark-theme .project__link {
+    color: var(--text-color);
+}
+
+body.dark-theme .project:hover .project__link {
+    color: #fff;
+}
+
+.about {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about__image {
+    width: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.about__title {
+    font-size: var(--font-size-heading);
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-family: var(--font-family-heading);
+    font-weight: 900;
+}
+
+.about__description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-family: var(--font-family-body);
+}
+
+.about__image,
+.hero__avatar {
+    display: block; /* Убедитесь, что элементы блоковые */
+    width: 40%; /* Ширина на 40% от родительского контейнера */
+    height: auto; /* Автоматическая высота для сохранения пропорций изображения */
+    border-radius: 50%; /* Скругляем углы до 50%, чтобы получить овальную форму */
+    transition: transform 0.15s ease, box-shadow 0.15s ease; /* Плавные переходы для эффекта увеличения и тени */
+}
+
+.about__image:hover,
+.hero__avatar:hover {
+    transform: scale(1.1) rotate(5deg); /* Увеличиваем и немного поворачиваем изображение */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Добавляем тень при наведении */
+    z-index: 10; /* Убедитесь, что изображение находится выше остальных элементов */
+}
+
+
+/* Общие стили для секций навыков */
+.skills-section {
+    margin: 2rem 0;
+}
+
+.skills-section__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 900; /* Жирное начертание для заголовка секции навыков */
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skills-list__item {
+    position: relative; /* Обязательно для корректного позиционирования псевдоэлемента */
+    background: var(--button-background);
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 1rem; /* Размер шрифта для элемента списка навыков */
+    transition: transform 0.15s, background-color 0.15s;
+    font-family: var(--font-family-body);
+    font-weight: bold; /* Жирное начертание для элемента списка навыков */
+    cursor: pointer;
+}
+
+.skills-list__item:hover {
+    transform: scale(1.1);
+    background-color: var(--button-hover-background);
+    color: #fff;
+}
+
+/* Стили для описания */
+.skills-list__item::after {
+    content: attr(data-description); /* Использование атрибута data-description */
+    display: block;
+    font-size: 0.875rem; /* Размер шрифта для описания */
+    background-color: var(--button-background);
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 100%; /* Расположить выше элемента */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s, visibility 0.15s;
+    font-weight: normal; /* Убираем жирное начертание текста */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для подсказок */
+}
+
+.skills-list__item:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Стили для блока "Обо мне" */
+.about__skills,
+.about__text {
+    margin-bottom: 10px;
+}
+
+/* Если хотите сохранить старый стиль списка для секций навыков "Hard Skills" и "Soft Skills" */
+.about__skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.about__skill {
+    display: inline-block;
+    background: var(--button-background);
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 1rem; /* Размер шрифта для элементов списка навыков */
+    transition: transform 0.15s, background-color 0.15s;
+    position: relative;
+    font-family: var(--font-family-body);
+    font-weight: bold; /* Жирное начертание для элементов списка навыков */
+}
+
+.about__skill:hover {
+    transform: scale(1.1);
+    background-color: var(--button-hover-background);
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact__title {
+    font-size: var(--font-size-heading);
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-family: var(--font-family-heading);
+    font-weight: bold; /* Жирное начертание для заголовка */
+}
+
+.contact__form {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact__label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1rem; /* Размер шрифта для меток в форме */
+    font-family: var(--font-family-body);
+}
+
+.contact__input,
+.contact__textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem; /* Размер шрифта для полей формы */
+    border-radius: 5px;
+    font-family: var(--font-family-body);
+    font-weight: 600;
+}
+
+.contact__button {
+    padding: 10px 20px;
+    background: var(--button-background);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem; /* Размер шрифта для кнопки */
+    transition: background 0.15s;
+    font-family: var(--font-family-heading);
+}
+
+.contact__button:hover {
+    background: var(--button-hover-background);
+}
+
+.footer {
+    background: var(--background-color); 
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+    font-weight: 700;
+}
+
+
+.footer__text {
+    font-size: 1.25rem; /* Размер шрифта для текста в футере */
+    color: var(--secondary-color);
+    font-family: var(--font-family-body);
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    overflow: hidden;
+}
+
+/* Стили для плавного появления элементов */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+ /* Стили для анимации загрузки */
+ .loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Светлый фон */
+    border-top: 16px solid var(--main-color); /* Цвет верхней части */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Общие стили для кнопок */
+.button {
+    background: var(--button-background);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-family: var(--font-family-heading);
+}
+
+.button:hover {
+    background: var(--button-hover-background);
+}
