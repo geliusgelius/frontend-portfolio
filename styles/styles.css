@@ -301,6 +301,14 @@ body.dark-theme .hero__description {
     margin: 10px;
 }
 
+.project:hover .project__overlay {
+    background-color: var(--button-hover-background);    
+}
+
+.project:hover .project__link {
+    background-color: var(--button-background);
+}
+
 /* Стили для ссылок в блоке проектов */
 .project__link {
     display: inline-block;
@@ -322,15 +330,12 @@ body.dark-theme .hero__description {
     left: 0;
     right: 0;
     position: absolute;
-    background: #d8b4a6dd;
+    background: var(--button-background);
     padding: 20px 30px;
+    opacity: 0.9;
 }
 
-/* Стили для ссылок при наведении на родительский блок .project */
-.project:hover .project__link {
-    background-color: var(--button-background);
-    color: var(--text-color);
-}
+
 
 /* Стили для ссылок при наведении на сами ссылки */
 .project__link:hover {
@@ -370,7 +375,7 @@ body.dark-theme .header__nav-link {
 }
 
 body.dark-theme .header__nav-link:hover {
-    color: #888;
+    color: var(--link-hover-color);
 }
 
 body.dark-theme .header__button {
@@ -383,22 +388,46 @@ body.dark-theme .header__button:hover {
 }
 
 body.dark-theme .project {
-    background: #444;
+    background: var(--button-background);
     color: var(--project-text-color);
 }
 
+body.dark-theme .project:hover .project__overlay {
+    background-color: var(--button-hover-background);    
+}
+
+body.dark-theme .project:hover .project__link {
+    background-color: var(--button-background);
+}
+
+body.dark-theme .project__overlay {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: var(--button-background);
+    padding: 20px 30px;
+    opacity: 0.9;
+}
+
+body.dark-theme .project:hover .project__link .project__overlay  {
+    background-color: var(--button-background);
+    color: var(--text-color);
+}
+
+    
+
 body.dark-theme .project:hover {
-    background-color: #666;
+    background-color: var(--button-hover-background);
     color: #fff;
 }
 
 body.dark-theme .project__link {
     color: var(--text-color);
+    background: var(--button-hover-background);
 }
 
-body.dark-theme .project:hover .project__link {
-    color: #fff;
-}
+
 
 .about {
     padding: 50px 20px;
