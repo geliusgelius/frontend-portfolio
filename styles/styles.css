@@ -701,3 +701,64 @@ body.dark-theme .project__link {
 .button:hover {
     background: var(--button-hover-background);
 }
+
+
+
+/* Стили для Swiper-контейнера */
+.swiper-container {
+    position: relative; /* Позволяет позиционировать стрелки относительно контейнера */
+    width: 100%;
+    height: auto;
+    overflow: hidden; /* Скрыть слайды, выходящие за пределы контейнера */
+}
+
+/* Стили для кнопок Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--text-color); /* Цвет стрелок */
+    background-color: var(--button-background); /* Фон кнопок */
+    border-radius: 50%; /* Круглая форма кнопок */
+    width: 50px; /* Ширина кнопок */
+    height: 50px; /* Высота кнопок */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute; /* Абсолютное позиционирование */
+    top: 50%; /* Центрирование по вертикали */
+    transform: translateY(-50%); /* Центрирование по вертикали */
+    z-index: 10; /* Убедитесь, что кнопки находятся поверх слайдов */
+}
+
+/* Позиционирование следующей стрелки */
+.swiper-button-next {
+    right: -20px; /* Сдвигаем вправо за пределы контейнера */
+}
+
+/* Позиционирование предыдущей стрелки */
+.swiper-button-prev {
+    left: -20px; /* Сдвигаем влево за пределы контейнера */
+}
+
+/* Цвет стрелок при наведении */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: var(--button-hover-background); /* Цвет фона при наведении */
+}
+
+/* Цвет стрелок */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 24px; /* Размер стрелок */
+    color: var(--text-color); /* Цвет стрелок */
+}
+
+/* Стили для пагинации */
+.swiper-pagination-bullet {
+    background: var(--button-background); /* Фон точек */
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--secondary-color); /* Цвет активной точки */
+}
+
+

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Junior Frontend-developer</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css" />
+
 
 </head>
 <body class="page">
@@ -127,6 +129,67 @@
         </div>
     </section>
 
+    <section id="projects" class="projects fade-in">
+        <div class="container">
+            <h2 class="projects__title">Последние проекты</h2>
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="project">
+                            <img class="project__image" src="images/projects/project1.png" alt="Сайт фитнес-центра">
+                            <div class="project__overlay">
+                                <h3 class="project__title">Сайт</h3>
+                                <p class="project__description">Сверстала сайт для Kropp-fitness по макету Figma</p>
+                                <a class="project__link" href="https://github.com/geliusgelius/kropp-fitness.git" target="_blank">Код</a>
+                                <a class="project__link" href="https://geliusgelius.github.io/kropp-fitness/" target="_blank">Демо</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project">
+                            <img class="project__image" src="images/promo-site.png" alt="Одностраничный промо-сайт">
+                            <div class="project__overlay">
+                                <h3 class="project__title">Одностраничный промо-сайт</h3>
+                                <p class="project__description">Создала одностраничный сайт для продвижения нового продукта.</p>
+                                <a class="project__link" href="#">Код</a>
+                                <a class="project__link" href="#">Демо</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project">
+                            <img class="project__image" src="images/promo-site.png" alt="Одностраничный промо-сайт">
+                            <div class="project__overlay">
+                                <h3 class="project__title">Одностраничный промо-сайт</h3>
+                                <p class="project__description">Создала одностраничный сайт для продвижения нового продукта.</p>
+                                <a class="project__link" href="#">Код</a>
+                                <a class="project__link" href="#">Демо</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project">
+                            <img class="project__image" src="images/promo-site.png" alt="Одностраничный промо-сайт">
+                            <div class="project__overlay">
+                                <h3 class="project__title">Одностраничный промо-сайт</h3>
+                                <p class="project__description">Создала одностраничный сайт для продвижения нового продукта.</p>
+                                <a class="project__link" href="#">Код</a>
+                                <a class="project__link" href="#">Демо</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Добавьте элементы управления -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    
+    
+
     <footer class="footer fade-in">
         <p class="footer__text">Сделала Ангелина Смирнова с ❤️ © 2024</p>
     </footer>
@@ -137,5 +200,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <script src="js/hover-button.js"></script>
     <script src="js/script.js"></script>
+    <script src="node_modules/swiper/swiper-bundle.min.js"></script>
+
+
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 2, /* Отображать два слайда одновременно */
+            spaceBetween: 20, /* Расстояние между слайдами */
+            loop: true, /* Показать бесконечное количество слайдов */
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                // Подстраивайте количество слайдов для разных размеров экрана
+                640: {
+                    slidesPerView: 1, /* Для экранов меньше 640px показывать один слайд */
+                },
+                1024: {
+                    slidesPerView: 2, /* Для экранов больше 1024px показывать два слайда */
+                },
+            },
+        });
+    </script>
+    
+    
+    
 </body>
 </html>
