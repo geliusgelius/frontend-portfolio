@@ -64,7 +64,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 20px;
+    padding: 30px 30px;
     box-sizing: border-box; /* Учитывает отступы и границы в размере контейнера */   
     background-color: rgba(216, 180, 166, 0.4);
     backdrop-filter: blur(3px);
@@ -702,63 +702,62 @@ body.dark-theme .project__link {
     background: var(--button-hover-background);
 }
 
-
-
 /* Стили для Swiper-контейнера */
 .swiper-container {
     position: relative; /* Позволяет позиционировать стрелки относительно контейнера */
-    width: 100%;
-    height: auto;
-    overflow: hidden; /* Скрыть слайды, выходящие за пределы контейнера */
+    width: 100%; /* Ширина контейнера на всю доступную ширину родителя */
+    height: auto; /* Высота автоматически подстраивается под содержимое */
+    overflow: hidden; /* Скрыть содержимое, выходящее за пределы контейнера */
 }
 
 /* Стили для кнопок Swiper */
 .swiper-button-next,
 .swiper-button-prev {
-    color: var(--text-color); /* Цвет стрелок */
-    background-color: var(--button-background); /* Фон кнопок */
-    border-radius: 50%; /* Круглая форма кнопок */
+    color: var(--text-color); /* Цвет стрелок кнопок, определяется переменной CSS */
+    background-color: var(--button-background); /* Фон кнопок, определяется переменной CSS */
+    border-radius: 50%; /* Сделать кнопки круглыми */
     width: 50px; /* Ширина кнопок */
     height: 50px; /* Высота кнопок */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute; /* Абсолютное позиционирование */
-    top: 50%; /* Центрирование по вертикали */
-    transform: translateY(-50%); /* Центрирование по вертикали */
-    z-index: 10; /* Убедитесь, что кнопки находятся поверх слайдов */
+    display: flex; /* Использовать flexbox для выравнивания содержимого кнопок */
+    align-items: center; /* Вертикальное выравнивание содержимого по центру */
+    justify-content: center; /* Горизонтальное выравнивание содержимого по центру */
+    position: absolute; /* Абсолютное позиционирование кнопок относительно контейнера */
+    top: 50%; /* Разместить кнопки по центру по вертикали относительно контейнера */
+    transform: translateY(-50%); /* Подвинуть кнопки на половину их высоты вверх для точного центрирования */
+    z-index: 10; /* Убедиться, что кнопки отображаются поверх слайдов */
 }
 
 /* Позиционирование следующей стрелки */
 .swiper-button-next {
-    right: -20px; /* Сдвигаем вправо за пределы контейнера */
+    right: -20px; /* Расположить кнопку "следующий слайд" за пределами контейнера с правой стороны */
 }
 
 /* Позиционирование предыдущей стрелки */
 .swiper-button-prev {
-    left: -20px; /* Сдвигаем влево за пределы контейнера */
+    left: -20px; /* Расположить кнопку "предыдущий слайд" за пределами контейнера с левой стороны */
 }
+
 
 /* Цвет стрелок при наведении */
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    background-color: var(--button-hover-background); /* Цвет фона при наведении */
+    background-color: var(--button-hover-background); /* Изменить фон кнопок при наведении, используя переменную CSS */
 }
 
 /* Цвет стрелок */
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    font-size: 24px; /* Размер стрелок */
-    color: var(--text-color); /* Цвет стрелок */
+    font-size: 24px; /* Размер стрелок, используя шрифт иконки */
+    color: var(--text-color); /* Цвет стрелок, определяется переменной CSS */
 }
 
-/* Стили для пагинации */
+/* Стили для пагинации (точки индикатора) */
 .swiper-pagination-bullet {
-    background: var(--button-background); /* Фон точек */
+    background: var(--button-background); /* Фон точек пагинации, определяется переменной CSS */
 }
 
 .swiper-pagination-bullet-active {
-    background: var(--secondary-color); /* Цвет активной точки */
+    background: var(--secondary-color); /* Цвет активной точки пагинации, определяется переменной CSS */
 }
 
 
