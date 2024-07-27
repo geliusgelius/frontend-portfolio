@@ -64,7 +64,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px 30px;
+    padding: 30px 50px;
     box-sizing: border-box; /* Учитывает отступы и границы в размере контейнера */   
     background-color: rgba(216, 180, 166, 0.4);
     backdrop-filter: blur(3px);
@@ -522,7 +522,7 @@ body.dark-theme .project__link {
     bottom: 100%; /* Расположить выше элемента */
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0;
+    opacity: 0.9;
     visibility: hidden;
     transition: opacity 0.15s, visibility 0.15s;
     font-weight: normal; /* Убираем жирное начертание текста */
@@ -716,8 +716,8 @@ body.dark-theme .project__link {
     color: var(--text-color); /* Цвет стрелок кнопок, определяется переменной CSS */
     background-color: var(--button-background); /* Фон кнопок, определяется переменной CSS */
     border-radius: 50%; /* Сделать кнопки круглыми */
-    width: 50px; /* Ширина кнопок */
-    height: 50px; /* Высота кнопок */
+    width: 27px; /* Стандартная ширина кнопок */
+    height: 44px; /* Стандартная высота кнопок */
     display: flex; /* Использовать flexbox для выравнивания содержимого кнопок */
     align-items: center; /* Вертикальное выравнивание содержимого по центру */
     justify-content: center; /* Горизонтальное выравнивание содержимого по центру */
@@ -729,14 +729,15 @@ body.dark-theme .project__link {
 
 /* Позиционирование следующей стрелки */
 .swiper-button-next {
-    right: -20px; /* Расположить кнопку "следующий слайд" за пределами контейнера с правой стороны */
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    right: 10px; /* Расположить кнопку "следующий слайд" внутри контейнера с правой стороны */
 }
 
 /* Позиционирование предыдущей стрелки */
 .swiper-button-prev {
-    left: -20px; /* Расположить кнопку "предыдущий слайд" за пределами контейнера с левой стороны */
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    left: 10px; /* Расположить кнопку "предыдущий слайд" внутри контейнера с левой стороны */
 }
-
 
 /* Цвет стрелок при наведении */
 .swiper-button-next:hover,
@@ -747,17 +748,19 @@ body.dark-theme .project__link {
 /* Цвет стрелок */
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    font-size: 24px; /* Размер стрелок, используя шрифт иконки */
+    font-size: 20px; /* Стандартный размер стрелок */
     color: var(--text-color); /* Цвет стрелок, определяется переменной CSS */
 }
 
 /* Стили для пагинации (точки индикатора) */
 .swiper-pagination-bullet {
     background: var(--button-background); /* Фон точек пагинации, определяется переменной CSS */
+    opacity: 0.7;
 }
 
 .swiper-pagination-bullet-active {
     background: var(--secondary-color); /* Цвет активной точки пагинации, определяется переменной CSS */
 }
+
 
 
