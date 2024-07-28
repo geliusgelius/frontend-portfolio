@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Портфолио фронтенд-разработчика Ангелины Смирновой.">
+    <meta name="keywords" content="фронтенд, разработчик, HTML, CSS, JavaScript, React">
+    <meta name="author" content="Ангелина Смирнова">
     <title>Junior Frontend-developer</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css" />
@@ -182,16 +185,22 @@
                 clickable: true,
             },
             breakpoints: {
-                // Подстраивайте количество слайдов для разных размеров экрана
+                480: {
+                    slidesPerView: 1, /* Для экранов шириной 480px и меньше показывать один слайд */
+                    spaceBetween: 10, /* Уменьшить расстояние между слайдами */
+                },
                 640: {
-                    slidesPerView: 1, /* Для экранов меньше 640px показывать один слайд */
+                    slidesPerView: 1, /* Для экранов от 640px до 1024px показывать один слайд */
+                    spaceBetween: 15, /* Увеличить расстояние между слайдами по сравнению с 480px */
                 },
                 1024: {
-                    slidesPerView: 2, /* Для экранов больше 1024px показывать два слайда */
+                    slidesPerView: 2, /* Для экранов шириной 1024px и больше показывать два слайда */
+                    spaceBetween: 20, /* Оставить расстояние между слайдами таким же, как и в исходных настройках */
                 },
             },
         });
     </script>
+    
     
     
     

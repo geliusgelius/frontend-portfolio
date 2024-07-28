@@ -211,5 +211,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-//слайдер
 

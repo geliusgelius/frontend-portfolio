@@ -427,10 +427,6 @@ body.dark-theme .project__link {
 
 
 
-.about {
-    padding: 50px 20px;
-    text-align: center;
-}
 
 .about__image {
     width: 150px;
@@ -760,4 +756,152 @@ body.dark-theme .project__link {
 }
 
 
+
+/* Адаптивные стили для планшетов и мобильных устройств */
+@media (max-width: 1024px) {
+    
+    /* Для планшетов */
+    .container {
+        padding: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header__nav {
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+
+    .header__buttons {
+        margin-left: 320px;
+    }
+
+    .about__image, .hero__avatar {
+        width: 30%;
+    }
+
+    .hero {
+        padding: 20px 10px;
+    }
+
+    .hero__title, .hero__description {
+        font-size: 1.25rem;
+        padding-top: 10px;
+    }
+
+    .projects__title {
+        font-size: 1.25rem;
+    }
+
+
+
+    .container-horizontal {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .project {
+        height: auto;
+    }
+
+    .swiper-container {
+        height: 300px;
+    }
+}
+
+/* Медиазапрос для планшетных устройств (максимальная ширина 768px) */
+@media (max-width: 768px) {
+    /* Изменение размера шрифта на мобильных устройствах */
+    body {
+        font-size: 0.875rem;
+    }
+
+    /* Установка отступов и ширины контейнера */
+    .container {
+        padding: 20px;
+        min-width: auto; /* Убираем фиксированную минимальную ширину */
+    }
+
+    /* Стиль для заголовка (header) */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Стиль для навигации в заголовке */
+    .header__nav {
+        margin-bottom: 10px;
+        margin-left: 0; /* Убираем левый отступ для мобильных устройств */
+    }
+
+    /* Стиль для кнопок в заголовке */
+    .header__buttons {
+        margin-left: 0; /* Убираем левый отступ для мобильных устройств */
+        margin-top: 10px; /* Добавляем верхний отступ, чтобы кнопки не слипались */
+    }
+
+    /* Паддинг для героического блока */
+    .hero {
+        padding: 20px 10px;
+    }
+
+    /* Изменение размера шрифтов в героическом блоке */
+    .hero__title, .hero__description {
+        font-size: 1rem;
+    }
+
+    /* Размер шрифта для проектов */
+    .projects__title {
+        font-size: 1.125rem;
+    }
+
+    /* Размер изображения и аватара */
+    .about__image, .hero__avatar {
+        width: 30%; /* Можно сделать ширину чуть меньше, если нужно */
+    }
+
+    /* Вертикальное направление для горизонтальных контейнеров */
+    .container-horizontal {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Автоматическая высота для проектов */
+    .project {
+        height: auto;
+    }
+
+    /* Высота слайдера */
+    .swiper-container {
+        height: 250px;
+    }
+}
+
+/* Медиазапрос для мобильных телефонов (максимальная ширина 480px) */
+@media (max-width: 480px) {
+    
+    .header__buttons {
+        margin-left: 10px; /* Убираем левый отступ для мобильных устройств */
+        margin-top: 10px; /* Добавляем верхний отступ, чтобы кнопки не слипались */
+    }
+    
+
+    .hero__title, .hero__description {
+        font-size: 1rem;
+    }
+
+    .about__image, .hero__avatar {
+        width: 30%; 
+    }
+
+    .footer__text {
+        font-size: 1rem;
+    }
+
+    
+    
+}
 
