@@ -796,7 +796,10 @@ body.dark-theme .project__link {
         font-size: 1.25rem;
     }
 
-
+    .swiper-pagination {
+        position: relative; 
+       padding-top: 15px;
+    }
 
     .container-horizontal {
         flex-direction: column;
@@ -804,7 +807,7 @@ body.dark-theme .project__link {
     }
 
     .project {
-        height: auto;
+        height: 300px;
     }
 
     .swiper-container {
