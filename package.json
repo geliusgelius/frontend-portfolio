@@ -14,5 +14,8 @@
     "dotenv": "^16.4.5",
     "swiper": "^11.1.7"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^6.0.0"
+  }
 }
