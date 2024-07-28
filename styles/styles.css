@@ -821,7 +821,7 @@ body.dark-theme .project__link {
 
     /* Установка отступов и ширины контейнера */
     .container {
-        padding: 20px;
+        padding: 40px;
         min-width: auto; /* Убираем фиксированную минимальную ширину */
     }
 
@@ -871,37 +871,68 @@ body.dark-theme .project__link {
 
     /* Автоматическая высота для проектов */
     .project {
-        height: auto;
+        height: 300px;
     }
 
     /* Высота слайдера */
     .swiper-container {
-        height: 250px;
+        height: 300px;
+    }
+
+    /* Позиционирование следующей стрелки */
+    .swiper-button-next {
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    right: 5px; /* Расположить кнопку "следующий слайд" внутри контейнера с правой стороны */
+    }
+
+/* Позиционирование предыдущей стрелки */
+    .swiper-button-prev {
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    left: 5px; /* Расположить кнопку "предыдущий слайд" внутри контейнера с левой стороны */
+    }
+
+    .swiper-pagination {
+        position: relative; 
+       padding-top: 15px;
     }
 }
 
 /* Медиазапрос для мобильных телефонов (максимальная ширина 480px) */
 @media (max-width: 480px) {
-    
-    .header__buttons {
-        margin-left: 10px; /* Убираем левый отступ для мобильных устройств */
-        margin-top: 10px; /* Добавляем верхний отступ, чтобы кнопки не слипались */
+    .container {
+        padding: 20px;
+        text-align: center; /* Центрирование всего содержимого */
     }
-    
 
-    .hero__title, .hero__description {
-        font-size: 1rem;
+    .header {
+        flex-direction: column;
+        align-items: center; /* Центрирование элементов в хедере */
+        text-align: center;
     }
 
     .about__image, .hero__avatar {
-        width: 30%; 
+        width: 100%; /* Полная ширина для изображений */
     }
 
-    .footer__text {
-        font-size: 1rem;
+    .hero {
+        padding: 20px 10px;
+        text-align: center; /* Центрирование текста в hero */
     }
 
-    
-    
+    .projects__title {
+        font-size: 1.25rem;
+        text-align: center; /* Центрирование заголовков проектов */
+    }
+
+    .container-horizontal {
+        flex-direction: column;
+        padding: 20px;
+        align-items: center; /* Центрирование горизонтальных контейнеров */
+    }
+
+    .about, .contact, .footer {
+        text-align: center; /* Центрирование текста в других секциях */
+    }
 }
+
 
