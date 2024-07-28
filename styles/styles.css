@@ -292,13 +292,14 @@ body.dark-theme .hero__description {
     transition: transform 0.15s, background-color 0.15s, color 0.15s;
     color: var(--text-color); /* Цвет текста по умолчанию */
     position: relative;
+    height: 450px;
 }
 
 .project:hover {
     transform: scale(1.1);
     background-color: var(--button-hover-background);
     color: var(--secondary-color); /* Цвет текста при наведении */
-    margin: 10px;
+    margin: 20px;
 }
 
 .project:hover .project__overlay {
