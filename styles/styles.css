@@ -763,20 +763,35 @@ body.dark-theme .project__link {
     /* Для планшетов */
     .container {
         padding: 20px;
+        max-width: 100%;
+        margin: 0 auto; /* Центрирование контейнера */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрирование содержимого */
+    }
+
+    .container-horizontal {
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрирование содержимого */
     }
 
     .header {
         flex-direction: column;
         align-items: flex-start;
+        white-space: nowrap;
     }
-
+    
     .header__nav {
         margin-bottom: 10px;
         margin-left: 10px;
     }
 
     .header__buttons {
-        margin-left: 320px;
+        position: absolute;
+        gap: 10px;
+        margin-left: 400px;
     }
 
     .about__image, .hero__avatar {
@@ -785,6 +800,7 @@ body.dark-theme .project__link {
 
     .hero {
         padding: 20px 10px;
+        text-align: center; /* Центрирование текста */
     }
 
     .hero__title, .hero__description {
@@ -794,16 +810,12 @@ body.dark-theme .project__link {
 
     .projects__title {
         font-size: 1.25rem;
+        text-align: center; /* Центрирование текста */
     }
 
     .swiper-pagination {
         position: relative; 
-       padding-top: 15px;
-    }
-
-    .container-horizontal {
-        flex-direction: column;
-        padding: 20px;
+        padding-top: 15px;
     }
 
     .project {
@@ -815,127 +827,138 @@ body.dark-theme .project__link {
     }
 }
 
+
 /* Медиазапрос для планшетных устройств (максимальная ширина 768px) */
 @media (max-width: 768px) {
-    /* Изменение размера шрифта на мобильных устройствах */
-    body {
-        font-size: 0.875rem;
-    }
-
-    /* Установка отступов и ширины контейнера */
-    .container {
-        padding: 40px;
-        min-width: auto; /* Убираем фиксированную минимальную ширину */
-    }
-
-    /* Стиль для заголовка (header) */
-    .header {
+    /* Кнопка-бургер */
+    .header__burger {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background-color: var(--button-background); /* Цвет кнопки соответствует другим кнопкам */
+        border-radius: 50%; /* Круглая форма */
+        cursor: pointer;
+        position: relative;
+        z-index: 10; /* Убедитесь, что кнопка находится поверх других элементов */
     }
 
-    /* Стиль для навигации в заголовке */
+    .header__burger-line {
+        width: 20px;
+        height: 2px;
+        background-color: var(--secondary-color); /* Цвет полосок кнопки-бургера */
+        margin: 3px 0;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .header__burger:hover .header__burger-line {
+        background-color: #fff; /* Цвет полосок при наведении */
+
+    }
+
+    .header__burger:active .header__burger-line {
+        transform: scale(0.9); /* Эффект нажатия */
+    }
+
+    /* Навигация скрыта по умолчанию на мобильных устройствах */
     .header__nav {
-        margin-bottom: 10px;
-        margin-left: 0; /* Убираем левый отступ для мобильных устройств */
+        display: none;
     }
 
-    /* Стиль для кнопок в заголовке */
-    .header__buttons {
-        margin-left: 0; /* Убираем левый отступ для мобильных устройств */
-        margin-top: 10px; /* Добавляем верхний отступ, чтобы кнопки не слипались */
-    }
-
-    /* Паддинг для героического блока */
-    .hero {
-        padding: 20px 10px;
-    }
-
-    /* Изменение размера шрифтов в героическом блоке */
-    .hero__title, .hero__description {
-        font-size: 1rem;
-    }
-
-    /* Размер шрифта для проектов */
-    .projects__title {
-        font-size: 1.125rem;
-    }
-
-    /* Размер изображения и аватара */
-    .about__image, .hero__avatar {
-        width: 30%; /* Можно сделать ширину чуть меньше, если нужно */
-    }
-
-    /* Вертикальное направление для горизонтальных контейнеров */
-    .container-horizontal {
+    /* Показываем меню при активации кнопки-бургера */
+    .header__burger.active + .header__nav {
+        display: flex;
         flex-direction: column;
-        padding: 10px;
+        align-items: center;
+    }
+    
+    .header__nav-list {
+        display: flex;
+        flex-direction: column; 
+        gap: 10px;
     }
 
-    /* Автоматическая высота для проектов */
-    .project {
-        height: 300px;
+    .header__nav-item {
+        font-size: clamp(0.625rem, 1.5vw, 0.875rem); /* Уменьшенный размер шрифта */
     }
 
-    /* Высота слайдера */
-    .swiper-container {
-        height: 300px;
+    /* Стили для ссылок в навигации */
+    .header__nav-link {
+        text-decoration: none;
+        color: inherit;
+        margin: 30px;
     }
 
-    /* Позиционирование следующей стрелки */
-    .swiper-button-next {
-    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-    right: 5px; /* Расположить кнопку "следующий слайд" внутри контейнера с правой стороны */
-    }
-
-/* Позиционирование предыдущей стрелки */
-    .swiper-button-prev {
-    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-    left: 5px; /* Расположить кнопку "предыдущий слайд" внутри контейнера с левой стороны */
-    }
-
-    .swiper-pagination {
-        position: relative; 
-       padding-top: 15px;
+    .header__buttons {
+        position: absolute;
+        gap: 10px;
+        margin-left: 400px;
     }
 }
 
 /* Медиазапрос для мобильных телефонов (максимальная ширина 480px) */
 @media (max-width: 480px) {
-    .container {
-        padding: 20px;
-        text-align: center; /* Центрирование всего содержимого */
+    /* Кнопка-бургер */
+    .header__burger {
+        width: 40px; /* Уменьшаем размер кнопки-бургера */
+        height: 40px;
     }
 
-    .header {
+    .header__burger-line {
+        width: 18px; /* Уменьшаем размер полосок */
+        height: 2px;
+        margin: 4px 0; /* Увеличиваем промежуток между полосками для лучшего восприятия */
+    }
+
+    .header__burger:hover .header__burger-line {
+        background-color: #fff; /* Цвет полосок при наведении */
+    }
+
+    .header__burger:active .header__burger-line {
+        transform: scale(0.9); /* Эффект нажатия */
+    }
+
+    /* Навигация */
+    .header__nav {
+        /* Навигация скрыта по умолчанию на мобильных устройствах */
+        display: none;
+    }
+
+    /* Показываем меню при активации кнопки-бургера */
+    .header__burger.active + .header__nav {
+        display: flex;
         flex-direction: column;
-        align-items: center; /* Центрирование элементов в хедере */
-        text-align: center;
+        align-items: center;
+        padding: 10px; /* Добавляем немного внутреннего отступа */
+    }
+    
+    .header__nav-list {
+        display: flex;
+        flex-direction: column; 
+        gap: 8px; /* Уменьшаем промежуток между элементами навигации */
     }
 
-    .about__image, .hero__avatar {
-        width: 100%; /* Полная ширина для изображений */
+    .header__nav-item {
+        font-size: clamp(0.5rem, 1.2vw, 0.75rem); /* Уменьшенный размер шрифта для маленьких экранов */
     }
 
-    .hero {
-        padding: 20px 10px;
-        text-align: center; /* Центрирование текста в hero */
+    /* Стили для ссылок в навигации */
+    .header__nav-link {
+        text-decoration: none;
+        color: inherit;
+        margin: 15px; /* Уменьшаем отступы для более компактного вида */
     }
 
-    .projects__title {
-        font-size: 1.25rem;
-        text-align: center; /* Центрирование заголовков проектов */
-    }
-
-    .container-horizontal {
-        flex-direction: column;
-        padding: 20px;
-        align-items: center; /* Центрирование горизонтальных контейнеров */
-    }
-
-    .about, .contact, .footer {
-        text-align: center; /* Центрирование текста в других секциях */
+    .header__buttons {
+        /* Уменьшаем размер и отступы для компактного отображения кнопок */
+        position: absolute;
+        gap: 8px;
+        margin-left: 200px; /* Уменьшаем отступ слева */
     }
 }
+
 
 

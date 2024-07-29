@@ -20,20 +20,25 @@
 </div>
 
     <header class="header fade-in">
-        <nav class="header__nav">
-            <ul class="header__nav-list">
-                <li class="header__nav-item"><a class="header__nav-link" href="#home">Главная</a></li>
-                <li class="header__nav-item"><a class="header__nav-link" href="#about">Обо мне</a></li>
-                <li class="header__nav-item"><a class="header__nav-link" href="#projects">Проекты</a></li>
-                
-                <!--<li class="header__nav-item"><a class="header__nav-link" href="#contact">Связаться</a></li> -->
-            </ul>
-            <div class="header__buttons">
-                <button class="header__button" id="theme-toggle">Темная тема</button>
-                <button class="header__button" id="language-toggle">EN/RU</button>
-            </div>
-        </nav>
-    </header>
+                  <!-- Кнопка-бургер для мобильных устройств -->
+  <button class="header__burger" aria-label="Toggle navigation">
+    <span class="header__burger-line"></span>
+    <span class="header__burger-line"></span>
+    <span class="header__burger-line"></span>
+</button>
+<nav class="header__nav">
+    <ul class="header__nav-list">
+        <li class="header__nav-item"><a class="header__nav-link" href="#home">Главная</a></li>
+        <li class="header__nav-item"><a class="header__nav-link" href="#about">Обо мне</a></li>
+        <li class="header__nav-item"><a class="header__nav-link" href="#projects">Проекты</a></li>
+    </ul>
+</nav>
+
+<div class="header__buttons">
+    <button class="header__button" id="theme-toggle">Темная тема</button>
+    <button class="header__button" id="language-toggle">EN/RU</button>
+</div>
+</header>
 
     <div id="particles-js"></div>
 
@@ -185,6 +190,34 @@
                 clickable: true,
             },
             breakpoints: {
+                400: {
+                    slidesPerView: 1, /* Для экранов шириной 480px и меньше показывать один слайд */
+                    spaceBetween: 10, /* Уменьшить расстояние между слайдами */
+                },
+                410: {
+                    slidesPerView: 1, /* Для экранов шириной 480px и меньше показывать один слайд */
+                    spaceBetween: 10, /* Уменьшить расстояние между слайдами */
+                },
+                420: {
+                    slidesPerView: 1, /* Для экранов шириной 480px и меньше показывать один слайд */
+                    spaceBetween: 10, /* Уменьшить расстояние между слайдами */
+                },
+                430: {
+                    slidesPerView: 1, /* Для экранов шириной 480px и меньше показывать один слайд */
+                    spaceBetween: 10, /* Уменьшить расстояние между слайдами */
+                },
+                440: {
+                    slidesPerView: 1, /* Для экранов шириной 480px и меньше показывать один слайд */
+                    spaceBetween: 10, /* Уменьшить расстояние между слайдами */
+                },
+                450: {
+                    slidesPerView: 1, /* Для экранов шириной 480px и меньше показывать один слайд */
+                    spaceBetween: 10, /* Уменьшить расстояние между слайдами */
+                },
+                460: {
+                    slidesPerView: 1, /* Для экранов шириной 480px и меньше показывать один слайд */
+                    spaceBetween: 10, /* Уменьшить расстояние между слайдами */
+                },
                 480: {
                     slidesPerView: 1, /* Для экранов шириной 480px и меньше показывать один слайд */
                     spaceBetween: 10, /* Уменьшить расстояние между слайдами */
@@ -206,3 +239,6 @@
     
 </body>
 </html>
+
+
+

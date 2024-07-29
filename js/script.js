@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.header__nav-link')[2].textContent = 'Projects';
 
     
-        document.querySelector('.hero__title').textContent = 'Hello';
+        document.querySelector('.hero__title').textContent = 'Hello 👋';
         document.querySelector('.hero__description').textContent = 'My name is Angelina. I am a frontend developer.';
         document.querySelector('.hero__resume-button').textContent = 'Download Resume';
     
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.header__nav-link')[2].textContent = 'Проекты';
 
     
-        document.querySelector('.hero__title').textContent = 'Привет';
+        document.querySelector('.hero__title').textContent = 'Привет 👋';
         document.querySelector('.hero__description').textContent = 'Меня зовут Ангелина. Я фронтенд-разработчик.';
         document.querySelector('.hero__resume-button').textContent = 'Скачать резюме';
     
@@ -215,5 +215,17 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(element);
     });
 });
+
+//кнопка бургер
+
+    const burger = document.querySelector('.header__burger');
+    const nav = document.querySelector('.header__nav');
+
+    burger.addEventListener('click', function () {
+        burger.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+
 
 
