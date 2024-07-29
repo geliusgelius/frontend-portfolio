@@ -762,7 +762,7 @@ body.dark-theme .project__link {
     
     /* Для планшетов */
     .container {
-        padding: 20px;
+        padding: 40px;
         max-width: 100%;
         margin: 0 auto; /* Центрирование контейнера */
         display: flex;
@@ -896,6 +896,10 @@ body.dark-theme .project__link {
         position: absolute;
         gap: 10px;
         margin-left: 400px;
+    }
+
+    .container {
+        padding: 40px;
     }
 }
 
