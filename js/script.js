@@ -61,9 +61,11 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.project__title')[0].textContent = 'Kropp-fitness website';
         document.querySelectorAll('.project__title')[1].textContent = 'Movie Search App';
         document.querySelectorAll('.project__title')[2].textContent = 'Website based on the Figma layout';
+        document.querySelectorAll('.project__title')[3].textContent = 'Layout of the Recording-Studio website';
         document.querySelectorAll('.project__description')[0].textContent = 'The layout of the Kropp-fitness website is based on the layout of Figma. Technologies: HTML, CSS. Contains adaptations for tablet/mobile devices.';
         document.querySelectorAll('.project__description')[1].textContent = 'A simple web application to search for movies using OMDBAPI. Technologies: HTML, CSS, JavaScript (including Fetch API for executing HTTP requests).';
         document.querySelectorAll('.project__description')[2].textContent = 'Layout of the site according to the Figma layout with adaptation for tablet/mobile devices. Technologies: HTML, SCSS';
+        document.querySelectorAll('.project__description')[3].textContent = 'Layout of the site according to the Figma layout with adaptation for tablet/mobile devices. Technologies: HTML, CSS, JavaScript.';
 
         document.querySelectorAll('.project__link').forEach(link => {
             if (link.textContent.includes('Код')) {
@@ -120,9 +122,11 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.project__title')[0].textContent = 'Сайт Kropp-fitness';
         document.querySelectorAll('.project__title')[1].textContent = 'Приложение поиска фильмов';
         document.querySelectorAll('.project__title')[2].textContent = 'Сайт по макету Figma';
+        document.querySelectorAll('.project__title')[3].textContent = 'Верстка сайта Recording-Studio';
         document.querySelectorAll('.project__description')[0].textContent = 'Вёрстка сайта Kropp-fitness по макету Figma. Технологии: HTML, CSS. Содержит адаптацию под планшетные/мобильные устройства.';
         document.querySelectorAll('.project__description')[1].textContent = 'Простое веб-приложение для поиска фильмов с использованием OMDB API. Технологии: HTML, CSS, JavaScript (включая Fetch API для выполнения HTTP-запросов).';
         document.querySelectorAll('.project__description')[2].textContent = 'Верстка сайта по макету Figma с адаптацией под планшетные/мобильные устройства. Технологии: HTML, SCSS';
+        document.querySelectorAll('.project__description')[3].textContent = 'Вёрстка сайта по макету Figma с адаптацией под планшетные/мобильные устройства. Технологии: HTML, SCSS, JavaScript.';
 
         
         document.querySelectorAll('.project__link').forEach(link => {
